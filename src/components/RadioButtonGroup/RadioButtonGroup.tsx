@@ -21,7 +21,7 @@ type RadioButtonGroupProps = {
   id: string;
   label: string;
   children: React.ReactNode;
-  value: string;
+  value?: string;
   disabled?: boolean;
   focus?: boolean;
   onFocus?: (value: boolean) => void;
@@ -114,7 +114,9 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
 
   // sync props value value to state
   useEffect(() => {
-    setSelectedValue(value);
+    if (value !== undefined) {
+      setSelectedValue(value);
+    }
   }, [value]);
 
   return (

@@ -104,13 +104,13 @@ const VerificationForm = () => {
     try {
       await saveCheckFormResults(results);
       alert("Submitted Successfully.");
+      // reinitialize the form
+      initForm(items);
+      formRef.current?.reset();
     } catch (error) {
       alert("Error. Please resubmit the form");
+      setIsSubmitted(false);
     }
-
-    // reinitialize the form
-    initForm(items);
-    formRef.current?.reset();
   };
 
   // To blur the current active element

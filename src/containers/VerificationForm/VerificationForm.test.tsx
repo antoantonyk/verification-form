@@ -304,9 +304,9 @@ test("submit failed scenario", async () => {
   });
 
   await waitFor(() => {
-    expect(submitButton.disabled).toBeTruthy();
     expect(saveCheckFormResultsMock).toHaveBeenCalledTimes(1);
     expect(window.alert).toHaveBeenCalledTimes(1);
+    expect(submitButton.disabled).toBeFalsy();
   });
 });
 
