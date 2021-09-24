@@ -21,6 +21,7 @@ type RadioButtonGroupProps = {
   id: string;
   label: string;
   children: React.ReactNode;
+  value: string;
   disabled?: boolean;
   focus?: boolean;
   onFocus?: (value: boolean) => void;
@@ -34,6 +35,7 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
     children,
     disabled,
     focus = false,
+    value,
     onChange,
     onFocus,
   } = props;
@@ -109,6 +111,11 @@ const RadioButtonGroup = (props: RadioButtonGroupProps) => {
       radioBtnGroupRef.current?.blur();
     }
   }, [focus]);
+
+  // sync props value value to state
+  useEffect(() => {
+    setSelectedValue(value);
+  }, [value]);
 
   return (
     <div

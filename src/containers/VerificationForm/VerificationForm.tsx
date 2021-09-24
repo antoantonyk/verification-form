@@ -88,6 +88,7 @@ const VerificationForm = () => {
       }))
     );
     setIsSubmitted(false);
+    setFocusedItemIndex(-1);
   }, []);
 
   const onFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -177,6 +178,7 @@ const VerificationForm = () => {
             key={item.id}
             label={item.description}
             focus={focusedItemIndex === index}
+            value={item.result}
             onChange={(value) => {
               onItemSelect(index, value as ResultValue);
             }}
