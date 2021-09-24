@@ -1,5 +1,4 @@
 import React, { ButtonHTMLAttributes } from "react";
-import PropTypes from "prop-types";
 import classNames from "classnames";
 
 import "./Button.scss";
@@ -14,13 +13,6 @@ const Button = ({ children, className, ...rest }: ButtonProp) => {
       {children}
     </button>
   );
-};
-
-Button.propTypes = {
-  children: PropTypes.string.isRequired,
-  disabled: PropTypes.bool,
-  type: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 export default Button;
