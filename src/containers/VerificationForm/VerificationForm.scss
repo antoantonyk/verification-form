@@ -1,0 +1,10 @@
+.verification-form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+
+  &__btn-submit {
+    margin-top: 8px;
+    align-self: flex-end;
+  }
+}

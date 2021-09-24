@@ -1,0 +1,44 @@
+.radio-btn {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 40px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  text-align: center;
+  user-select: none;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+
+  position: relative;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover:not(.radio-btn--active),
+  &--focus:not(.radio-btn--active) {
+    background-color: var(--highlight-color);
+    filter: brightness(110%);
+  }
+
+  &--focus {
+    box-shadow: 0 0 0 0.2rem #cd22327a;
+  }
+
+  &--active {
+    color: white;
+    background-color: var(--primary-color);
+  }
+
+  &--disabled {
+    background-color: #e6ebf4;
+    color: #bdc0cf;
+    cursor: not-allowed;
+  }
+
+  &--active.radio-btn--disabled {
+    background-color: #a7aebb;
+  }
+}

@@ -1,0 +1,49 @@
+.radio-btn-group {
+  position: relative;
+  padding: 16px;
+
+  &:focus,
+  &:focus-within,
+  &--focus {
+    background-color: var(--highlight-color);
+  }
+
+  &:hover:not(:focus):not(:focus-within) {
+    background-color: rgb(228, 228, 228);
+  }
+
+  &--disabled {
+    background-color: #e6ebf4;
+    color: #bdc0cf;
+    cursor: not-allowed;
+  }
+
+  &__label {
+    margin: 0 0 8px 0;
+  }
+
+  &__items {
+    display: inline-flex;
+
+    > .radio-btn {
+      min-width: 32px;
+
+      &:not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:not(:first-child) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: -1px;
+      }
+
+      input[type="radio"] {
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        pointer-events: none;
+      }
+    }
+  }
+}
